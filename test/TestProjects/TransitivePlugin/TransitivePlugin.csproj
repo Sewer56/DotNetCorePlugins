@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SharedAbstraction.v1\SharedAbstraction.v1.csproj" />
+    <ProjectReference Include="..\TransitiveTransitiveDep.v1\TransitiveTransitiveDep.v1.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,4 +10,8 @@
     <Compile Include="..\TransitiveDep.v1\*.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TransitiveTransitiveDep.v2\TransitiveTransitiveDep.v2.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Runtime.Loader;
 using Test.Referenced.Library;
 using Test.Shared.Abstraction;
+using TransitiveTransitiveDep.v1;
 using WithOwnPluginsContract;
 using Xunit;
 
@@ -117,6 +118,10 @@ namespace McMaster.NETCore.Plugins.Tests
             var config = Activator.CreateInstance(configType);
             var transitiveInstance = configType.GetMethod("GetTransitiveType")?.Invoke(config, null);
             Assert.IsType<Test.Transitive.TransitiveSharedType>(transitiveInstance);
+
+            // <= Please see here! These do not match, as expected. This should fail.
+            var transitiveTransitiveInstance = configType.GetMethod("GetTransitiveTransitiveType")?.Invoke(config, null);
+            Assert.IsType<TransitiveTransitiveSharedType>(transitiveTransitiveInstance);
         }
     }
 }

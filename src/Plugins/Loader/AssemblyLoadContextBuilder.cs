@@ -157,6 +157,7 @@ namespace McMaster.NETCore.Plugins.Loader
                 {
                     _defaultAssemblies.Add(assemblyName.Name);
                     var assembly = _defaultLoadContext.LoadFromAssemblyName(assemblyName);
+                    
                     foreach (var reference in assembly.GetReferencedAssemblies())
                     {
                         if (reference.Name != null)
